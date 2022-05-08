@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="11dp"
+        android:background="@drawable/xqy_select_gray_no_bg">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/iv_status">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0">
+                <TextView
+                    android:id="@+id/tv_contract_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/tv_sign_status"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="@color/xqy_1C2D41"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_sign_status"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="18dp"
+                    android:text="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="4dp"
+            android:layout_toLeftOf="@+id/iv_status"
+            android:drawableLeft="@mipmap/xqy_icon_main_list_send"
+            android:drawablePadding="3dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="F9F9F9"
+            android:textColor="@color/xqy_415268"
+            android:textSize="12sp" />
+
+
+        <TextView
+            android:id="@+id/tv_receiver_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_company_name"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="6dp"
+            android:layout_toLeftOf="@+id/iv_status"
+            android:drawableLeft="@mipmap/xqy_icon_main_list_receive"
+            android:drawablePadding="3dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="fdsfds"
+            android:textColor="@color/xqy_415268"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/tv_receiver_name"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/xqy_E9EAEE" />
+
+        <TextView
+            android:id="@+id/tv_expire_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/tv_receiver_name"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="25dp"
+            android:text="发起人:张三"
+            android:textColor="@color/xqy_415268"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_sign_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_expire_date"
+            android:layout_alignBottom="@+id/tv_expire_date"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@+id/tv_expire_date"
+            android:gravity="right"
+            android:text="发起时间:2022-04-04"
+            android:textColor="@color/xqy_90A4BE"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/xqy_icon_approval_spz"
+            android:translationX="6dp"
+            android:translationY="-14dp" />
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
