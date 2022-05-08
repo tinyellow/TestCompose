@@ -32,37 +32,10 @@ class MessageViewModel(private val token:String,private val msgCode:String):View
     }.flow.cachedIn(viewModelScope)
 
 
-//    fun getList(){
-//        val url = "https://xqy.bndxqc.com/api/contract/thirdUserMsg/app/v1/getPersonalMsgPage"
-//        val heads = HashMap<String?, String?>()
-//        heads["access_token"] = token
-//        heads["channel"] = "XQYMOBILE"
-//
-//        val map  = hashMapOf<String?,String?>()
-//        map["page"] = page.toString()
-//        map["rows"] = "15"
-//        map["companyId"] = "0"
-//        map["msgCode"] = msgCode
-//        viewModelScope.launch {
-//            val result : Result<MessageList> = api.postForm(url,map,heads, DataParser.get())
-////            val data = result.successOr{ emptyList<MessageList>()}
-//            if(result.isError()){
-//
-//            }else{
-//                result.data?.list?.let {
-//                    messages = it
-//                }
-//            }
-//        }
-//
-//    }
-
     private suspend fun getList(rows:Int):List<Message>?{
 
         val url = ""
         val heads = HashMap<String?, String?>()
-        heads["access_token"] = token
-        heads["channel"] = "XQYMOBILE"
 
         val map  = hashMapOf<String?,String?>()
         map["page"] = rows.toString()
