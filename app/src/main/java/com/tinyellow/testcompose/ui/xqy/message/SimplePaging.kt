@@ -17,7 +17,7 @@ class  SimplePaging<T : Any>(private val rows:Int, val get:suspend (Int)->(List<
                     nextKey = if (datas.size >= rows) nextPage + 1 else null
                 )
             }else{
-                throw NullPointerException("加载异常")
+                LoadResult.Error(NullPointerException("加载异常"))
             }
         } catch (e: Exception) {
             LoadResult.Error(e)

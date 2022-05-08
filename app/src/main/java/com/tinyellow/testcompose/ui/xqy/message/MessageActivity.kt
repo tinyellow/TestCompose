@@ -220,6 +220,7 @@ fun MessageList(
         onRefresh = { collectItem.refresh()}
     ) {
         LazyColumn(
+            modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(horizontal = 12.dp),
             verticalArrangement = Arrangement.spacedBy(9.dp)
         ) {

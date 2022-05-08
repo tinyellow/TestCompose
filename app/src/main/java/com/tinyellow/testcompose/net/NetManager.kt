@@ -28,11 +28,19 @@ interface ApiService {
 
 suspend fun <T> ApiService.postJson(url: String?, jsonStr: String?, headers: Map<String?, String?>?,parser: IParser<T>): Result<T> {
     val requestBody: RequestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonStr)
-    return RetrofitClient.request(post(url,requestBody,RetrofitClient.securityMap(headers)),parser)
+    return try {
+        RetrofitClient.request(post(url,requestBody,RetrofitClient.securityMap(headers)),parser)
+    }catch (e:Exception){
+        parser.parseThrowable(e)
+    }
 }
 
 suspend fun <T> ApiService.postForm(url: String?, params: Map<String?, String?>?, headers: Map<String?, String?>?,parser: IParser<T>): Result<T>{
-    return RetrofitClient.request(post(url,RetrofitClient.securityMap(params),RetrofitClient.securityMap(headers)),parser)
+    return try {
+        RetrofitClient.request(post(url,RetrofitClient.securityMap(params),RetrofitClient.securityMap(headers)),parser)
+    }catch (e:Exception){
+        parser.parseThrowable(e)
+    }
 }
 
 object RetrofitClient {
